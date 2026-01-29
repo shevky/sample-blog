@@ -1,0 +1,192 @@
+{{> components/notification}}
+
+<article class="space-y-10">
+  <nav aria-label="Breadcrumb" class="text-sm text-slate-500 dark:text-slate-400 flex flex-wrap items-center gap-2">
+    <a href="{{site.home}}" class="hover:text-sky-600 dark:hover:text-sky-300">{{i18n.buttons.backToHome}}</a>
+    {{#front.categoryUrl}}
+      <span>/</span>
+      <a href="{{front.categoryUrl}}" class="hover:text-sky-600 dark:hover:text-sky-300">{{front.categoryLabel}}</a>
+    {{/front.categoryUrl}}
+    <span>/</span>
+    <span class="text-slate-700 dark:text-slate-200">{{front.title}}</span>
+  </nav>
+
+  <header class="space-y-4">
+    {{#front.categoryLabel}}
+      <p class="text-xs uppercase tracking-[0.4em] text-sky-600 dark:text-sky-300 font-semibold">{{front.categoryLabel}}</p>
+    {{/front.categoryLabel}}
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{{front.title}}</h1>
+    {{#front.description}}
+      <p class="text-slate-600 dark:text-slate-300 text-lg">{{front.description}}</p>
+    {{/front.description}}
+    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-300">
+      <div class="space-y-1">
+        <dt class="font-semibold text-slate-800 dark:text-white">{{i18n.meta.publishedOn}}</dt>
+        <dd>
+          {{#front.date}}<time datetime="{{front.date}}">{{front.dateDisplay}}</time>{{/front.date}}
+          {{#front.readingTime}}&nbsp;• {{front.readingTime}} {{i18n.meta.readingTime}}{{/front.readingTime}}
+        </dd>
+      </div>
+      {{#front.updatedDisplay}}
+        <div class="space-y-1">
+          <dt class="font-semibold text-slate-800 dark:text-white">{{i18n.meta.updatedOn}}</dt>
+          <dd>{{front.updatedDisplay}}</dd>
+        </div>
+      {{/front.updatedDisplay}}
+    </dl>
+  </header>
+
+  {{#front.cover}}
+    <figure class="rounded-2xl overflow-hidden shadow-lg shadow-slate-200 dark:shadow-slate-900/40">
+      <img src="{{front.cover}}" alt="{{front.coverAlt}}" class="w-full h-64 object-cover">
+      {{#front.coverCaption}}
+        <figcaption class="text-xs text-slate-500 dark:text-slate-400 px-4 py-2 bg-white/70 dark:bg-slate-900/60">
+          {{front.coverCaption}}
+        </figcaption>
+      {{/front.coverCaption}}
+    </figure>
+  {{/front.cover}}
+
+  <div class="prose dark:prose-invert max-w-none">
+    {{{content.html}}}
+  </div>
+
+  {{#front.hasTags}}
+    <section class="space-y-2">
+      <h3 class="text-lg font-semibold text-slate-900 dark:text-white">{{i18n.post.tagsHeading}}</h3>
+      <div class="flex flex-wrap gap-2">
+        {{#front.tagLinks}}
+          <a href="{{url}}" class="tag-pill">{{label}}</a>
+        {{/front.tagLinks}}
+      </div>
+    </section>
+  {{/front.hasTags}}
+
+  {{#site.features.postOperations}}
+    {{#share}}
+      {{#enabled}}
+        <section class="share-panel space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700 dark:text-sky-200">
+              {{i18n.sharing.sharePrompt}}
+            </p>
+            {{#copy}}
+              <button
+                type="button"
+                class="share-button share-button--ghost"
+                data-copy-link
+                data-copy-label="{{i18n.sharing.copyLink}}"
+                data-copy-success="{{i18n.sharing.copied}}"
+                aria-live="polite"
+              >
+                {{i18n.sharing.copyLink}}
+              </button>
+            {{/copy}}
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {{#whatsapp}}
+              <button
+                type="button"
+                class="share-button"
+                data-share-network="whatsapp"
+                data-share-title="{{front.title}}"
+              >
+                WhatsApp
+              </button>
+            {{/whatsapp}}
+            {{#x}}
+              <button
+                type="button"
+                class="share-button"
+                data-share-network="x"
+                data-share-title="{{front.title}}"
+              >
+                X
+              </button>
+            {{/x}}
+            {{#linkedin}}
+              <button
+                type="button"
+                class="share-button"
+                data-share-network="linkedin"
+                data-share-title="{{front.title}}"
+              >
+                LinkedIn
+              </button>
+            {{/linkedin}}
+            {{#facebook}}
+              <button
+                type="button"
+                class="share-button"
+                data-share-network="facebook"
+                data-share-title="{{front.title}}"
+              >
+                Facebook
+              </button>
+            {{/facebook}}
+          </div>
+        </section>
+      {{/enabled}}
+    {{/share}}
+  {{/site.features.postOperations}}
+
+  {{#front.seriesListing.hasItems}}
+    <section class="space-y-3 border border-slate-200 dark:border-slate-700 rounded-2xl p-6">
+      {{#front.seriesListing.hasLabel}}
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-white">{{front.seriesListing.label}}</h3>
+      {{/front.seriesListing.hasLabel}}
+      <ol class="space-y-2 text-slate-700 dark:text-slate-300">
+        {{#front.seriesListing.items}}
+          <li class="flex items-center gap-3">
+            {{#hasUrl}}
+              <a href="{{url}}" class="hover:text-sky-600 dark:hover:text-sky-300">{{label}}</a>
+            {{/hasUrl}}
+            {{^hasUrl}}
+              <span>{{label}}</span>
+            {{/hasUrl}}
+            {{#isCurrent}}
+              <span class="text-xs uppercase text-sky-600 dark:text-sky-300">{{i18n.listing.current}}</span>
+            {{/isCurrent}}
+          </li>
+        {{/front.seriesListing.items}}
+      </ol>
+    </section>
+  {{/front.seriesListing.hasItems}}
+
+  {{#listing}}
+    {{#hasItems}}
+      <section class="space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+            {{#heading}}{{heading}}{{/heading}}{{^heading}}{{i18n.listing.relatedTitle}}{{/heading}}
+          </h3>
+          {{#hasPagination}}
+            <span class="text-sm text-slate-500 dark:text-slate-400">{{page}} / {{totalPages}}</span>
+          {{/hasPagination}}
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {{#items}}
+            <article class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 space-y-3">
+              <p class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                {{#date}}<time datetime="{{date}}">{{dateDisplay}}</time>{{/date}}
+                {{#readingTime}} • {{readingTime}} {{i18n.meta.readingTime}}{{/readingTime}}
+              </p>
+              <h4 class="text-lg font-semibold">
+                <a href="{{canonical}}" class="hover:text-sky-600 dark:hover:text-sky-300">{{title}}</a>
+              </h4>
+              {{#description}}
+                <p class="text-sm text-slate-600 dark:text-slate-400">{{description}}</p>
+              {{/description}}
+              <a href="{{canonical}}" class="inline-flex items-center text-sky-600 dark:text-sky-300 font-semibold">
+                {{i18n.buttons.readMore}}
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </article>
+          {{/items}}
+        </div>
+      </section>
+    {{/hasItems}}
+  {{/listing}}
+</article>

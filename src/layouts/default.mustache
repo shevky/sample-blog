@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html
+  lang="{{lang}}"
+  data-lang="{{lang}}"
+  data-site-base="{{{site.url}}}"
+  data-lang-default="{{site.defaultLanguage}}"
+  {{#page.alternates.tr}}data-lang-tr="{{{page.alternates.tr}}}"{{/page.alternates.tr}}
+  {{#page.alternates.en}}data-lang-en="{{{page.alternates.en}}}"{{/page.alternates.en}}
+>
+<head>
+    {{> partials/_head }}
+</head>
+<body>
+    {{> partials/_header }}
+    <main class="max-w-3xl mx-auto px-6 py-10 space-y-8">
+        {{{content}}}
+    </main>
+    {{> partials/_footer }}
+    {{> components/star-toast }}
+</body>
+</html>

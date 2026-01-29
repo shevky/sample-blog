@@ -1,0 +1,27 @@
+<section
+    class="mt-10 rounded-2xl border border-sky-100/80 bg-linear-to-r from-sky-50/80 via-white to-sky-50/70 px-6 py-6 shadow-sm dark:border-sky-400/40 dark:from-slate-900/70 dark:via-slate-900/40 dark:to-slate-900/70"
+    data-component="new-year-notification"
+>
+    <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-start gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl shadow-lg shadow-sky-100/70 dark:bg-slate-900/60 dark:shadow-none" aria-hidden="true">
+                🎉
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-600 dark:text-sky-300">
+                    {{i18n.notifications.newYear.title}}
+                </p>
+                <p class="mt-2 text-base leading-relaxed text-slate-700 dark:text-slate-200">
+                    {{i18n.notifications.newYear.message}}
+                </p>
+            </div>
+        </div>
+        <a
+            class="toggle-btn whitespace-nowrap shadow-sm shadow-sky-100/80 hover:shadow-lg hover:shadow-sky-200/80 dark:shadow-none"
+            href="{{#notificationCtaUrl}}{{notificationCtaUrl}}{{/notificationCtaUrl}}{{^notificationCtaUrl}}{{site.home}}#latest{{/notificationCtaUrl}}"
+        >
+            <span>{{i18n.notifications.newYear.cta}}</span>
+            <span aria-hidden="true">-></span>
+        </a>
+    </div>
+</section>

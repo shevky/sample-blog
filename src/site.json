@@ -1,0 +1,112 @@
+{
+  "identity": {
+    "author": "Sample Blog Collective",
+    "email": "hello@example.com",
+    "url": "http://localhost:3000/",
+    "themeColor": "#0284c7",
+    "social": {
+      "rss": true,
+      "github": "https://github.com/fatihtatoglu",
+      "linkedin": "https://www.linkedin.com/in/fatihtatoglu"
+    }
+  },
+  "seo": {
+    "defaultImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+    "includeCollections": true,
+    "includePaging": false
+  },
+  "analytics": {
+    "enabled": false,
+    "gtmId": "",
+    "gaId": "",
+    "clarityId": ""
+  },
+  "features": {
+    "postOperations": {
+      "enabled": true,
+      "like": false,
+      "dislike": false,
+      "comment": false,
+      "share": {
+        "enabled": true,
+        "whatsapp": true,
+        "x": true,
+        "linkedin": true,
+        "facebook": false,
+        "copy": true
+      }
+    },
+    "search": false
+  },
+  "markdown": {
+    "highlight": true
+  },
+  "content": {
+    "pagination": {
+      "pageSize": 2,
+      "segment": {
+        "tr": "sayfa",
+        "en": "page"
+      }
+    },
+    "languages": {
+      "default": "tr",
+      "supported": [
+        "tr",
+        "en"
+      ],
+      "canonical": {
+        "tr": "/",
+        "en": "/en/"
+      }
+    },
+    "collections": {
+      "tags": {
+        "template": "tag",
+        "types": [
+          "tag"
+        ],
+        "slugPattern": {
+          "tr": "etiket/{{key}}",
+          "en": "tag/{{key}}"
+        },
+        "pairs": {
+          "docker": {
+            "tr": "css",
+            "en": "css"
+          }
+        }
+      },
+      "category": {
+        "template": "tag",
+        "types": [
+          "category"
+        ],
+        "slugPattern": {
+          "tr": "/{{key}}",
+          "en": "/{{key}}"
+        }
+      }
+    }
+  },
+  "build": {
+    "minify": false,
+    "debug": true
+  },
+  "robots": {
+    "allow": [
+      "/"
+    ],
+    "disallow": [
+      "draft/",
+      "assets/"
+    ]
+  },
+  "plugins": [
+    "@shevky/plugin-robots-txt",
+    "@shevky/plugin-tailwindcss",
+    "@shevky/plugin-esbuild",
+    "@shevky/plugin-rss",
+    "@shevky/plugin-sitemap"
+  ]
+}

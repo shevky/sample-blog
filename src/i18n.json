@@ -1,0 +1,262 @@
+{
+  "header": {
+    "brand": {
+      "tr": "Örnek Blog",
+      "en": "Sample Blog"
+    },
+    "subtitle": {
+      "tr": "Teknik notlar, tasarım fikirleri ve modern web tüyoları.",
+      "en": "Technical notes, design inspiration, and modern web insights."
+    },
+    "actions": {
+      "language": {
+        "tr": "Dili değiştir",
+        "en": "Switch language"
+      },
+      "languageShort": {
+        "tr": "TR",
+        "en": "EN"
+      },
+      "theme": {
+        "tr": "Temayı değiştir",
+        "en": "Toggle theme"
+      },
+      "menu": {
+        "tr": "Menüyü aç/kapat",
+        "en": "Toggle menu"
+      }
+    }
+  },
+  "hero": {
+    "title": {
+      "tr": "Modern geliştiriciler için kısa ve öz içerikler",
+      "en": "Concise stories for modern builders"
+    },
+    "lede": {
+      "tr": "Türkçe ve İngilizce rehberlerle araç zincirinizi kurun, tasarım sistemleri oluşturun ve TypeScript projelerinizi ölçeklendirin.",
+      "en": "Use bilingual guides to shape your toolchain, build design systems, and scale TypeScript projects."
+    },
+    "primaryCta": {
+      "tr": "Son yazıları oku",
+      "en": "Read the latest posts"
+    },
+    "secondaryCta": {
+      "tr": "Projeyi GitHub'da görüntüle",
+      "en": "View the project on GitHub"
+    }
+  },
+  "buttons": {
+    "readMore": {
+      "tr": "Devamını oku",
+      "en": "Read more"
+    },
+    "viewAll": {
+      "tr": "Tümünü gör",
+      "en": "View all"
+    },
+    "backToHome": {
+      "tr": "Ana sayfaya dön",
+      "en": "Back to home"
+    }
+  },
+  "meta": {
+    "publishedOn": {
+      "tr": "Yayın tarihi",
+      "en": "Published on"
+    },
+    "updatedOn": {
+      "tr": "Güncellendi",
+      "en": "Updated"
+    },
+    "category": {
+      "tr": "Kategori",
+      "en": "Category"
+    },
+    "readingTime": {
+      "tr": "dk okuma",
+      "en": "min read"
+    }
+  },
+  "listing": {
+    "relatedTitle": {
+      "tr": "İlgili Yazılar",
+      "en": "Related Articles"
+    },
+    "tagPrefix": {
+      "tr": "Etiket",
+      "en": "Tag"
+    },
+    "categoryPrefix": {
+      "tr": "Kategori",
+      "en": "Category"
+    },
+    "current": {
+      "tr": "Bu yazı",
+      "en": "Current post"
+    },
+    "empty": {
+      "tr": "Henüz içerik bulunamadı.",
+      "en": "Nothing to show yet."
+    }
+  },
+  "pagination": {
+    "previous": {
+      "tr": "Önceki",
+      "en": "Previous"
+    },
+    "next": {
+      "tr": "Sonraki",
+      "en": "Next"
+    }
+  },
+  "post": {
+    "tagsHeading": {
+      "tr": "Etiketler",
+      "en": "Tags"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "tr": "Özenle seçilmiş içeriklerle üretken kal.",
+      "en": "Stay productive with carefully curated content."
+    },
+    "policies": {
+      "cookie": {
+        "tr": "Çerez Politikası",
+        "en": "Cookie Policy"
+      },
+      "privacy": {
+        "tr": "Gizlilik Politikası",
+        "en": "Privacy Policy"
+      }
+    },
+    "note": {
+      "tr": "Örnek Blog © 2025",
+      "en": "Sample Blog © 2025"
+    },
+    "tags": {
+      "web": {
+        "tr": "Web Geliştirme",
+        "en": "Web Development"
+      },
+      "javascript": {
+        "tr": "JavaScript",
+        "en": "JavaScript"
+      },
+      "css": {
+        "tr": "CSS",
+        "en": "CSS"
+      },
+      "typescript": {
+        "tr": "TypeScript",
+        "en": "TypeScript"
+      }
+    }
+  },
+  "sections": {
+    "featured": {
+      "title": {
+        "tr": "Öne Çıkan Yazılar",
+        "en": "Featured Posts"
+      },
+      "subtitle": {
+        "tr": "Takımın sıklıkla referans verdiği kılavuzlar.",
+        "en": "Guides the team references most often."
+      }
+    },
+    "latestPosts": {
+      "title": {
+        "tr": "Son Yazılar",
+        "en": "Latest Posts"
+      },
+      "subtitle": {
+        "tr": "Takip edilen konulardan en taze eklemeler.",
+        "en": "Fresh additions from the topics you follow."
+      },
+      "empty": {
+        "tr": "Henüz içerik yok. Çok yakında ekleyeceğiz.",
+        "en": "No content yet. Fresh posts are coming soon."
+      }
+    }
+  },
+  "sharing": {
+    "copyLink": {
+      "tr": "Bağlantıyı kopyala",
+      "en": "Copy link"
+    },
+    "sharePrompt": {
+      "tr": "Bu yazıyı paylaş",
+      "en": "Share this article"
+    },
+    "copied": {
+      "tr": "Kopyalandı!",
+      "en": "Copied!"
+    }
+  },
+  "forms": {
+    "searchPlaceholder": {
+      "tr": "Yazı veya konu ara...",
+      "en": "Search posts or topics..."
+    },
+    "subscribeCta": {
+      "tr": "Bültene katıl",
+      "en": "Join the newsletter"
+    }
+  },
+  "notifications": {
+    "newYear": {
+      "title": {
+        "tr": "Mutlu Yıllar!",
+        "en": "Happy New Year!"
+      },
+      "message": {
+        "tr": "Yeni yılda üretkenlik, huzur ve ilham dolu projeler dileriz. En son rehberlerimizi takip ederek 2025 hedeflerini beraber hayata geçirelim.",
+        "en": "Wishing you a year filled with calm focus, inspiration, and meaningful shipping. Follow our latest guides and let’s bring your 2025 goals to life together."
+      },
+      "cta": {
+        "tr": "Yeni yazıları keşfet",
+        "en": "Explore fresh stories"
+      }
+    }
+  },
+  "promo": {
+    "starProject": {
+      "title": {
+        "tr": "Shevky'yi Destekle",
+        "en": "Support Shevky"
+      },
+      "message": {
+        "tr": "GitHub'da projeye yıldız ekleyerek bileşenlerin gelişmesine katkı sağlayabilirsin.",
+        "en": "Add a star on GitHub to help the components keep improving."
+      },
+      "cta": {
+        "tr": "Projeye yıldız ver",
+        "en": "Star the project"
+      },
+      "dismiss": {
+        "tr": "Kapat",
+        "en": "Dismiss"
+      }
+    }
+  },
+  "legal": {
+    "ownership": {
+      "title": {
+        "tr": "Telif Hakkı Bildirimi",
+        "en": "Copyright Notice"
+      },
+      "ownerLabel": {
+        "tr": "Yazar / Sahip",
+        "en": "Author / Owner"
+      },
+      "rights": {
+        "tr": "Bu içerikteki tüm haklar saklıdır. Kaynak belirtilmeden kopyalanamaz veya dağıtılamaz.",
+        "en": "All rights to this article are reserved. It may not be copied or distributed without attribution."
+      },
+      "contactHint": {
+        "tr": "İzin talepleri için bizimle iletişime geçebilirsiniz.",
+        "en": "Reach out for licensing or permission requests."
+      }
+    }
+  }
+}

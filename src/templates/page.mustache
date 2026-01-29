@@ -1,0 +1,19 @@
+<article class="space-y-6 border border-slate-200 dark:border-slate-700 rounded-2xl p-6">
+  <header class="space-y-3">
+    <p class="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400 font-semibold">
+      {{i18n.header.brand}}
+    </p>
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-white">{{front.title}}</h1>
+    {{#front.description}}
+      <p class="text-slate-600 dark:text-slate-300 text-lg">{{front.description}}</p>
+    {{/front.description}}
+    <div class="text-sm text-slate-500 dark:text-slate-400">
+      {{#front.date}}<span>{{i18n.meta.publishedOn}} <time datetime="{{front.date}}">{{front.dateDisplay}}</time></span>{{/front.date}}
+      {{#front.updatedDisplay}}<span> • {{i18n.meta.updatedOn}} {{front.updatedDisplay}}</span>{{/front.updatedDisplay}}
+    </div>
+  </header>
+
+  <div class="prose dark:prose-invert max-w-none">
+    {{{content.html}}}
+  </div>
+</article>

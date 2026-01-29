@@ -1,0 +1,40 @@
+<section
+    class="mt-12 rounded-2xl border border-slate-200/80 bg-white/90 px-6 py-5 text-sm shadow-sm dark:border-slate-700/80 dark:bg-slate-900/70"
+    data-component="copyright-note"
+>
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-start gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 text-xl font-semibold text-white shadow-lg shadow-slate-200/80 dark:bg-slate-800 dark:text-slate-50 dark:shadow-none" aria-hidden="true">
+                ©
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
+                    {{i18n.legal.ownership.title}}
+                </p>
+                <p class="mt-2 text-base font-semibold text-slate-900 dark:text-white">
+                    <span class="block text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+                        {{i18n.legal.ownership.ownerLabel}}
+                    </span>
+                    <span>
+                        {{#copyrightOwner}}{{copyrightOwner}}{{/copyrightOwner}}
+                        {{^copyrightOwner}}{{site.identity.author}}{{/copyrightOwner}}
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="space-y-2 text-slate-600 dark:text-slate-300">
+            <p>{{i18n.legal.ownership.rights}}</p>
+            <p class="text-xs">
+                {{i18n.legal.ownership.contactHint}}
+                {{#copyrightContact}}
+                    <a class="text-sky-600 hover:underline dark:text-sky-300" href="{{copyrightContact}}">{{copyrightContact}}</a>
+                {{/copyrightContact}}
+                {{^copyrightContact}}
+                    {{#site.identity.email}}
+                        <a class="text-sky-600 hover:underline dark:text-sky-300" href="mailto:{{site.identity.email}}">{{site.identity.email}}</a>
+                    {{/site.identity.email}}
+                {{/copyrightContact}}
+            </p>
+        </div>
+    </div>
+</section>

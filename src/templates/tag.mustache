@@ -1,0 +1,77 @@
+<section class="border border-sky-500/70 rounded-2xl p-8 bg-white/80 dark:bg-slate-900/40 shadow-lg shadow-sky-100 dark:shadow-sky-900/40 space-y-3">
+  <p class="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400 font-semibold">
+  {{#isTag}}{{i18n.listing.tagPrefix}}{{/isTag}}
+  {{#isCategory}}{{i18n.listing.categoryPrefix}}{{/isCategory}}
+  </p>
+  <h1 class="text-3xl font-bold text-slate-900 dark:text-white uppercase">{{front.title}}</h1>
+  {{#front.description}}
+    <p class="text-slate-600 dark:text-slate-300 text-lg">{{front.description}}</p>
+  {{/front.description}}
+</section>
+
+{{#listing}}
+  {{#hasItems}}
+    <section class="space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">
+          {{#heading}}{{heading}}{{/heading}}{{^heading}}{{i18n.sections.latestPosts.title}}{{/heading}}
+        </h2>
+        {{#hasPagination}}
+          <span class="text-sm text-slate-500 dark:text-slate-400">{{page}} / {{totalPages}}</span>
+        {{/hasPagination}}
+      </div>
+      <div class="space-y-6">
+        {{#items}}
+          <article class="border border-slate-200 dark:border-slate-700 rounded-2xl p-6 space-y-4 hover:shadow-lg hover:-translate-y-0.5 transition">
+            <div class="flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400">
+              {{#date}}<time datetime="{{date}}">{{dateDisplay}}</time>{{/date}}
+              {{#readingTime}}<span>• {{readingTime}} {{i18n.meta.readingTime}}</span>{{/readingTime}}
+            </div>
+            <h3 class="text-xl font-bold">
+              <a href="{{canonical}}" class="hover:text-sky-600 dark:hover:text-sky-300 transition-colors">
+                {{title}}
+              </a>
+            </h3>
+            {{#description}}
+              <p class="text-slate-600 dark:text-slate-300">{{description}}</p>
+            {{/description}}
+            <a href="{{canonical}}" class="inline-flex items-center text-sky-600 dark:text-sky-300 font-semibold">
+              {{i18n.buttons.readMore}}
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </article>
+        {{/items}}
+      </div>
+    </section>
+  {{/hasItems}}
+
+  {{^hasItems}}
+    <p class="text-sm text-slate-500 dark:text-slate-400">
+      {{#emptyMessage}}{{emptyMessage}}{{/emptyMessage}}
+      {{^emptyMessage}}{{i18n.listing.empty}}{{/emptyMessage}}
+    </p>
+  {{/hasItems}}
+
+  {{#hasPagination}}
+    <nav class="flex items-center justify-between text-sm text-sky-600 dark:text-sky-300 mt-6">
+      {{#hasPrev}}
+        <a href="{{prevUrl}}" class="hover:underline">&larr; {{i18n.pagination.previous}}</a>
+      {{/hasPrev}}
+      {{^hasPrev}}
+        <span class="text-slate-400 dark:text-slate-600">&larr; {{i18n.pagination.previous}}</span>
+      {{/hasPrev}}
+      {{#hasNext}}
+        <a href="{{nextUrl}}" class="hover:underline">{{i18n.pagination.next}} &rarr;</a>
+      {{/hasNext}}
+      {{^hasNext}}
+        <span class="text-slate-400 dark:text-slate-600">{{i18n.pagination.next}} &rarr;</span>
+      {{/hasNext}}
+    </nav>
+  {{/hasPagination}}
+{{/listing}}
+
+{{^listing}}
+  <p class="text-sm text-slate-500 dark:text-slate-400">{{i18n.listing.empty}}</p>
+{{/listing}}

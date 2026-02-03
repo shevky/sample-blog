@@ -107,6 +107,57 @@
     "@shevky/plugin-tailwindcss",
     "@shevky/plugin-esbuild",
     "@shevky/plugin-rss",
-    "@shevky/plugin-sitemap"
-  ]
+    "@shevky/plugin-sitemap",
+    "@shevky/plugin-content-bridge"
+  ],
+  "pluginConfigs": {
+    "shevky-content-bridge": {
+      "maxItems": 10,
+      "sources": [
+        {
+          "name": "catch-jobs",
+          "fetch": {
+            "endpointUrl": "https://gate.catch.jobs/job/v1/export",
+            "method": "GET",
+            "headers": {
+              "X-Job-Export-Key": "3f5d7f6e-7d2b-46ef-8f95-0a94a64e7f2f",
+              "X-Culture": "tr-TR"
+            },
+            "pagination": {
+              "pageParam": "pageIndex",
+              "sizeParam": "pageSize",
+              "pageIndexStart": 0,
+              "pageSize": 2,
+              "itemsPath": "$_data.jobs",
+              "totalPath": "$_data.totalCount",
+              "delayMs": 1000,
+              "mode": "page"
+            },
+            "timeoutMs": 30000
+          },
+          "mapping": {
+            "frontMatter": {
+              "id": "$_id",
+              "lang": "tr",
+              "title": "$_title",
+              "slug": "$slugify($concat($_companyName, ' ', $_title, ' ', $_typeStr))",
+              "canonical": "$concat('~/', $slugify($concat($_companyName, ' ', $_title, ' ', $_typeStr)))",
+              "template": "post",
+              "layout": "default",
+              "status": "published",
+              "featured": true,
+              "date": "$_dateCreateISO8601",
+              "description": "$_title",
+              "category": "$_category",
+              "cover": "$_companyLogo",
+              "notification.badge.title": "$_companyName"
+            },
+            "content": "$concat('{{#front.raw.notification}}{{> components/badge}}{{/front.raw.notification}}','\r\n\r\n\r\n\r\n',$_description)",
+            "sourcePath": "$concat('bridge://catch/jobs/', $_id, '.md')"
+          },
+          "maxItems": 2
+        }
+      ]
+    }
+  }
 }

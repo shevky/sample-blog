@@ -31,9 +31,9 @@ notification:
     title: "Örnek etiket"
 ---
 
-{{#front.notification}}
+{{#front.raw.notification}}
 {{> components/badge}}
-{{/front.notification}}
+{{/front.raw.notification}}
 
 TypeScript başarılı olduğunda ekip içi iletişimi güçlendiren bir sözleşmeye dönüşür. Kod incelemeleri hızlanır, beklenmedik runtime hataları azalır ve yeni geliştiricileri dahil etmek kolaylaşır.
 

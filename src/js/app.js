@@ -8,6 +8,60 @@ const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 const SUPPORTED_LANGS = ["tr", "en"];
 
+const fragmentModal = document.querySelector("[data-fragment-modal]");
+const fragmentContent = fragmentModal?.querySelector("[data-fragment-content]");
+
+function openFragmentModal() {
+    if (!fragmentModal) {
+        return;
+    }
+    fragmentModal.hidden = false;
+    fragmentModal.dataset.visible = "true";
+    document.body.style.overflow = "hidden";
+}
+
+function closeFragmentModal() {
+    if (!fragmentModal) {
+        return;
+    }
+    fragmentModal.dataset.visible = "false";
+    fragmentModal.hidden = true;
+    document.body.style.overflow = "";
+    if (fragmentContent) {
+        fragmentContent.innerHTML = "";
+    }
+}
+
+function setFragmentContent(htmlText) {
+    if (!fragmentContent) {
+        return;
+    }
+    fragmentContent.innerHTML = htmlText;
+}
+
+async function handleFragmentClick(button) {
+    if (!button) {
+        return;
+    }
+    const url = button.dataset.fragmentUrl;
+    if (!url) {
+        return;
+    }
+
+    setFragmentContent("<p>Loading fragment...</p>");
+    openFragmentModal();
+
+    try {
+        const response = await fetch(url, { credentials: "same-origin" });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        const htmlText = await response.text();
+        setFragmentContent(htmlText);
+    } catch (error) {
+        setFragmentContent("<p>Fragment load failed.</p>");
+    }
+}
 
 document.addEventListener("click", (event) => {
     const themeToggle = event.target.closest("[data-theme-toggle]");
@@ -22,6 +76,25 @@ document.addEventListener("click", (event) => {
         const current = html.getAttribute("lang") || DEFAULT_LANG;
         const next = current === "tr" ? "en" : "tr";
         setLang(next, { redirect: true });
+        return;
+    }
+
+    const fragmentButton = event.target.closest("[data-fragment-button]");
+    if (fragmentButton) {
+        event.preventDefault();
+        handleFragmentClick(fragmentButton);
+        return;
+    }
+
+    const fragmentClose = event.target.closest("[data-fragment-close]");
+    if (fragmentClose) {
+        event.preventDefault();
+        closeFragmentModal();
+        return;
+    }
+
+    if (fragmentModal && event.target === fragmentModal) {
+        closeFragmentModal();
         return;
     }
 

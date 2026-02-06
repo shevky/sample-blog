@@ -25,7 +25,7 @@
   "dependencies": {
     "tailwindcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
-    "@shevky/core": "^0.0.4",
+    "@shevky/core": "/home/fatihtatoglu/workspace/shevky/core/",
     "@shevky/plugin-esbuild": "^0.0.2",
     "@shevky/plugin-robots-txt": "^0.0.2",
     "@shevky/plugin-rss": "^0.0.2",

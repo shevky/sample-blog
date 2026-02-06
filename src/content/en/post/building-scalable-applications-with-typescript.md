@@ -29,6 +29,8 @@ status: published
 notification:
   badge:
     title: "Sample Badge"
+fragment: true
+fragmentTemplate: post
 ---
 
 {{#front.notification}}

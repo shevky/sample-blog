@@ -107,8 +107,7 @@
     "@shevky/plugin-tailwindcss",
     "@shevky/plugin-esbuild",
     "@shevky/plugin-rss",
-    "@shevky/plugin-sitemap",
-    "@shevky/plugin-content-bridge"
+    "@shevky/plugin-sitemap"
   ],
   "pluginConfigs": {
     "shevky-content-bridge": {

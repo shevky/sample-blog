@@ -29,6 +29,8 @@ status: published
 notification:
   badge:
     title: "Örnek etiket"
+fragment: true
+fragmentTemplate: post
 ---
 
 {{#front.raw.notification}}

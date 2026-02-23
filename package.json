@@ -23,14 +23,14 @@
   ],
   "author": "Fatih Tatoğlu",
   "dependencies": {
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
-    "@shevky/core": "^0.0.6",
-    "@shevky/plugin-esbuild": "^0.0.2",
-    "@shevky/plugin-robots-txt": "^0.0.2",
-    "@shevky/plugin-rss": "^0.0.2",
-    "@shevky/plugin-sitemap": "^0.0.2",
-    "@shevky/plugin-tailwindcss": "^0.0.4",
-    "@shevky/plugin-content-bridge": "^0.0.1"
+    "@shevky/core": "^0.0.8",
+    "@shevky/plugin-esbuild": "^0.0.3",
+    "@shevky/plugin-robots-txt": "^0.0.3",
+    "@shevky/plugin-rss": "^0.0.3",
+    "@shevky/plugin-sitemap": "^0.0.4",
+    "@shevky/plugin-tailwindcss": "^0.0.5",
+    "@shevky/plugin-content-bridge": "^0.0.5"
   }
 }
